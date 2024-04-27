@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "ts-node-dev --experimental-specifier-resolution=node src/index.ts",
+    "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d src/modules/config/ormconfig.ts",
+    "migration:up": "ts-node ./node_modules/typeorm/cli.js migration:run -d src/modules/config/ormconfig.ts",
+    "migration:down": "ts-node ./node_modules/typeorm/cli.js migration:revert -d src/modules/config/ormconfig.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "prisma": "^5.13.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}
